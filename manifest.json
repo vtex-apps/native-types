@@ -1,0 +1,15 @@
+{
+  "vendor": "vtex",
+  "name": "native-types",
+  "version": "0.1.0",
+  "builders": {
+    "messages": "1.x",
+    "pages": "1.x",
+    "react": "3.x"
+  },
+  "scripts": {
+    "postreleasy": "vtex publish --verbose"
+  },
+  "title": "Native Types",
+  "description": "Native types"
+}

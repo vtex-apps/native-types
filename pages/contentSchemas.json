@@ -1,0 +1,160 @@
+{
+  "definitions": {
+    "brand": {
+      "format": "Brand",
+      "title": "native-types.native.brand",
+      "type": "string"
+    },
+
+    "category": {
+      "format": "Category",
+      "title": "native-types.native.category",
+      "type": "string"
+    },
+
+    "collection": {
+      "format": "Collection",
+      "title": "native-types.native.collection",
+      "type": "string"
+    },
+
+    "department": {
+      "format": "Department",
+      "title": "native-types.native.department",
+      "type": "string"
+    },
+
+    "image": {
+      "properties": {
+        "description": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/text"
+            }
+          ],
+          "title": "native-types.native.image.description"
+        },
+        "desktop": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/url"
+            }
+          ],
+          "format": "Image",
+          "title": "native-types.native.image.desktop"
+        },
+        "filename": {
+          "title": "native-types.native.image.filename",
+          "type": "string"
+        },
+        "mobile": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/url"
+            }
+          ],
+          "format": "Image",
+          "title": "native-types.native.image.mobile"
+        }
+      },
+      "title": "native-types.native.image",
+      "type": "object"
+    },
+
+    "link": {
+      "properties": {
+        "attributeNofollow": {
+          "default": false,
+          "title": "native-types.native.link.attributeNofollow",
+          "type": "boolean"
+        },
+        "attributeTitle": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/text"
+            }
+          ],
+          "title": "native-types.native.link.attributeTitle"
+        },
+        "newTab": {
+          "title": "native-types.native.link.newTab",
+          "type": "boolean"
+        },
+        "url": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/url"
+            }
+          ],
+          "title": "native-types.native.link.url"
+        }
+      },
+      "title": "native-types.native.link",
+      "type": "object"
+    },
+
+    "richText": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/text"
+        }
+      ],
+      "title": "native-types.native.richText"
+    },
+
+    "text": {
+      "format": "IOMessage",
+      "title": "native-types.native.text",
+      "type": "string"
+    },
+
+    "url": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/text"
+        }
+      ],
+      "title": "native-types.native.url",
+      "type": "string"
+    },
+
+    "video": {
+      "properties": {
+        "description": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/text"
+            }
+          ],
+          "title": "native-types.native.video.description"
+        },
+        "thumbnail": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/image"
+            }
+          ],
+          "title": "native-types.native.video.thumbnail"
+        },
+        "title": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/text"
+            }
+          ],
+          "title": "native-types.native.video.title"
+        },
+        "url": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/url"
+            }
+          ],
+          "title": "native-types.native.video.url"
+        }
+      },
+      "title": "native-types.native.video",
+      "type": "object"
+    }
+  }
+}
