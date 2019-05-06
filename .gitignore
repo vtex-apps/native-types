@@ -36,3 +36,4 @@ lib
 .eslintrc
 *.orig
 react/package-lock.json
+.vscode
