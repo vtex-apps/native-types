@@ -2,25 +2,25 @@
   "definitions": {
     "brand": {
       "format": "Brand",
-      "title": "native-types.native.brand",
+      "title": "admin/native-types.brand",
       "type": "string"
     },
 
     "category": {
       "format": "Category",
-      "title": "native-types.native.category",
+      "title": "admin/native-types.category",
       "type": "string"
     },
 
     "collection": {
       "format": "Collection",
-      "title": "native-types.native.collection",
+      "title": "admin/native-types.collection",
       "type": "string"
     },
 
     "department": {
       "format": "Department",
-      "title": "native-types.native.department",
+      "title": "admin/native-types.department",
       "type": "string"
     },
 
@@ -32,7 +32,7 @@
               "$ref": "#/definitions/text"
             }
           ],
-          "title": "native-types.native.image.description"
+          "title": "admin/native-types.image.description"
         },
         "desktop": {
           "allOf": [
@@ -41,10 +41,10 @@
             }
           ],
           "format": "Image",
-          "title": "native-types.native.image.desktop"
+          "title": "admin/native-types.image.desktop"
         },
         "filename": {
-          "title": "native-types.native.image.filename",
+          "title": "admin/native-types.image.filename",
           "type": "string"
         },
         "mobile": {
@@ -54,10 +54,10 @@
             }
           ],
           "format": "Image",
-          "title": "native-types.native.image.mobile"
+          "title": "admin/native-types.image.mobile"
         }
       },
-      "title": "native-types.native.image",
+      "title": "admin/native-types.image",
       "type": "object"
     },
 
@@ -65,7 +65,7 @@
       "properties": {
         "attributeNofollow": {
           "default": false,
-          "title": "native-types.native.link.attributeNofollow",
+          "title": "admin/native-types.link.attributeNofollow",
           "type": "boolean"
         },
         "attributeTitle": {
@@ -74,10 +74,10 @@
               "$ref": "#/definitions/text"
             }
           ],
-          "title": "native-types.native.link.attributeTitle"
+          "title": "admin/native-types.link.attributeTitle"
         },
         "newTab": {
-          "title": "native-types.native.link.newTab",
+          "title": "admin/native-types.link.newTab",
           "type": "boolean"
         },
         "url": {
@@ -86,10 +86,10 @@
               "$ref": "#/definitions/url"
             }
           ],
-          "title": "native-types.native.link.url"
+          "title": "admin/native-types.link.url"
         }
       },
-      "title": "native-types.native.link",
+      "title": "admin/native-types.link",
       "type": "object"
     },
 
@@ -99,12 +99,12 @@
           "$ref": "#/definitions/text"
         }
       ],
-      "title": "native-types.native.richText"
+      "title": "admin/native-types.richText"
     },
 
     "text": {
       "format": "IOMessage",
-      "title": "native-types.native.text",
+      "title": "admin/native-types.text",
       "type": "string"
     },
 
@@ -114,7 +114,7 @@
           "$ref": "#/definitions/text"
         }
       ],
-      "title": "native-types.native.url",
+      "title": "admin/native-types.url",
       "type": "string"
     },
 
@@ -126,7 +126,7 @@
               "$ref": "#/definitions/text"
             }
           ],
-          "title": "native-types.native.video.description"
+          "title": "admin/native-types.video.description"
         },
         "thumbnail": {
           "allOf": [
@@ -134,7 +134,7 @@
               "$ref": "#/definitions/image"
             }
           ],
-          "title": "native-types.native.video.thumbnail"
+          "title": "admin/native-types.video.thumbnail"
         },
         "title": {
           "allOf": [
@@ -142,7 +142,7 @@
               "$ref": "#/definitions/text"
             }
           ],
-          "title": "native-types.native.video.title"
+          "title": "admin/native-types.video.title"
         },
         "url": {
           "allOf": [
@@ -150,10 +150,10 @@
               "$ref": "#/definitions/url"
             }
           ],
-          "title": "native-types.native.video.url"
+          "title": "admin/native-types.video.url"
         }
       },
-      "title": "native-types.native.video",
+      "title": "admin/native-types.video",
       "type": "object"
     }
   }
