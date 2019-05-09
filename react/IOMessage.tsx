@@ -6,11 +6,17 @@ interface Props extends InjectedIntlProps {
 }
 
 const IOMessage: React.FunctionComponent<Props> = ({ id, intl }) => {
-  if (intl.messages[id]) {
+  const intlMessage = intl.messages[id]
+
+  if (intlMessage) {
     return <FormattedMessage id={id} />
   }
 
-  return null
+  if (intlMessage === '') {
+    return null
+  }
+
+  return <>{id}</>
 }
 
 export default injectIntl(IOMessage)

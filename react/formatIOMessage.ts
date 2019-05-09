@@ -1,20 +1,22 @@
 import { InjectedIntl } from 'react-intl'
 
 interface Params {
-  defaultId?: string
   id: string
   intl: InjectedIntl
 }
-const formatIOMessage = ({ defaultId, id, intl }: Params) => {
-  if (intl.messages[id]) {
+
+const formatIOMessage = ({ id, intl }: Params) => {
+  const intlMessage = intl.messages[id]
+
+  if (intlMessage) {
     return intl.formatMessage({ id })
   }
 
-  if (defaultId && intl.messages[defaultId]) {
-    return intl.formatMessage({ id: defaultId })
+  if (intlMessage === '') {
+    return ''
   }
 
-  return ''
+  return id
 }
 
 export default formatIOMessage
