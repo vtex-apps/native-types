@@ -1,15 +1,21 @@
-import { InjectedIntl } from 'react-intl'
+import { FormattedMessage, InjectedIntlProps, MessageValue } from 'react-intl'
 
-interface Params {
-  id: string
-  intl: InjectedIntl
-}
+type FormatIOMessage = (
+  adaptedMessageDescriptor: FormattedMessage.MessageDescriptor &
+    InjectedIntlProps,
+  values?: Record<string, MessageValue>
+) => string
 
-const formatIOMessage = ({ id, intl }: Params) => {
+const formatIOMessage: FormatIOMessage = (
+  { intl, ...messageDescriptor },
+  values
+) => {
+  const { id } = messageDescriptor
+
   const intlMessage = intl.messages[id]
 
   if (intlMessage) {
-    return intl.formatMessage({ id })
+    return intl.formatMessage(messageDescriptor, values)
   }
 
   if (intlMessage === '') {
