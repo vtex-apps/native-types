@@ -23,5 +23,5 @@
   "admin/native-types.video.url": "admin/native-types.video.url",
   "store/native-types.text": "Text field",
   "store/native-types.richText": "Rich text field",
-  "store/native-types.url": "Url field"
+  "store/native-types.url": "URL field"
 }
