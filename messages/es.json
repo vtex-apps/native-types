@@ -20,5 +20,8 @@
   "admin/native-types.video.thumbnail": "Miniatura",
   "admin/native-types.video": "Vídeo",
   "admin/native-types.video.title": "Título",
-  "admin/native-types.video.url": "URL"
+  "admin/native-types.video.url": "URL",
+  "store/native-types.text": "Tu texto aquí",
+  "store/native-types.richText": "Lorem ipsum...",
+  "store/native-types.url": "http://example.com"
 }
