@@ -99,13 +99,15 @@
           "$ref": "#/definitions/text"
         }
       ],
-      "title": "admin/native-types.richText"
+      "title": "admin/native-types.richText",
+      "examples": ["store/native-types.richText"]
     },
 
     "text": {
       "format": "IOMessage",
       "title": "admin/native-types.text",
-      "type": "string"
+      "type": "string",
+      "examples": ["store/native-types.text"]
     },
 
     "url": {
@@ -115,7 +117,8 @@
         }
       ],
       "title": "admin/native-types.url",
-      "type": "string"
+      "type": "string",
+      "examples": ["store/native-types.url"]
     },
 
     "video": {

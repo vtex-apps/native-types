@@ -11,5 +11,6 @@
     "postreleasy": "vtex publish --verbose"
   },
   "title": "Native Types",
-  "description": "Native types"
+  "description": "Native types",
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
