@@ -1,22 +1,20 @@
 import React from 'react'
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
 
-interface Props extends InjectedIntlProps {
-  id: string
-}
+type Props = FormattedMessage.Props & InjectedIntlProps
 
-const IOMessage: React.FunctionComponent<Props> = ({ id, intl }) => {
-  const intlMessage = intl.messages[id]
+const IOMessage: React.FunctionComponent<Props> = props => {
+  const intlMessage = props.intl.messages[props.id]
 
   if (intlMessage) {
-    return <FormattedMessage id={id} />
+    return <FormattedMessage {...props} />
   }
 
   if (intlMessage === '') {
     return null
   }
 
-  return <>{id}</>
+  return <>{props.id}</>
 }
 
 export default injectIntl(IOMessage)
