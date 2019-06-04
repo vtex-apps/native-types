@@ -11,13 +11,11 @@ interface RenderElementParams {
   values?: Parameters<InjectedIntl['formatMessage']>[1]
 }
 
-interface GetElementParams extends RenderElementParams {
-  shouldTranslate?: boolean
-}
-
-type QueryElementParams = RenderElementParams
-
-const renderElement = ({ id, messages, values }: RenderElementParams) =>
+const renderIOMessageWithIntl = ({
+  id,
+  messages,
+  values,
+}: RenderElementParams) =>
   render(
     <IntlProvider messages={messages}>
       <IOMessage id={id} values={values} />
@@ -25,34 +23,19 @@ const renderElement = ({ id, messages, values }: RenderElementParams) =>
     { messages }
   )
 
-const getElement = ({
-  id,
-  messages,
-  shouldTranslate = true,
-  values,
-}: GetElementParams) => {
-  const { getByText } = renderElement({ id, messages, values })
-
-  if (values) {
-    const text = Object.entries(values).reduce((acc, [currKey, currValue]) => {
-      if (typeof currValue !== 'string') {
-        return acc
-      }
-
-      return acc.replace(`{${currKey}}`, currValue)
-    }, messages[id])
-
-    return getByText(text)
-  }
-
-  return getByText(shouldTranslate ? messages[id] : id)
+interface ParseDynamicMessageParams {
+  message: string
+  values: Record<string, ReactIntl.MessageValue>
 }
 
-const queryElement = ({ id, messages, values }: QueryElementParams) => {
-  const { queryByText } = renderElement({ id, messages, values })
+const parseDynamicMessage = ({ message, values }: ParseDynamicMessageParams) =>
+  Object.entries(values).reduce((acc, [currKey, currValue]) => {
+    if (typeof currValue !== 'string') {
+      return acc
+    }
 
-  return queryByText(id)
-}
+    return acc.replace(`{${currKey}}`, currValue)
+  }, message)
 
 describe('IOMessage', () => {
   it('displays id when message is undefined', () => {
@@ -60,7 +43,9 @@ describe('IOMessage', () => {
 
     const messages: Record<string, string> = {}
 
-    const element = getElement({ id, messages, shouldTranslate: false })
+    const { getByText } = renderIOMessageWithIntl({ id, messages })
+
+    const element = getByText(id)
 
     expect(element).toBeDefined()
   })
@@ -70,9 +55,9 @@ describe('IOMessage', () => {
 
     const messages: Record<string, string> = { [id]: '' }
 
-    const element = queryElement({ id, messages })
+    const { container } = renderIOMessageWithIntl({ id, messages })
 
-    expect(element).toBeNull()
+    expect(container.children).toHaveLength(0)
   })
 
   it('works with static, non-empty messages', () => {
@@ -82,7 +67,9 @@ describe('IOMessage', () => {
       [id]: 'It works :)',
     }
 
-    const element = getElement({ id, messages })
+    const { getByText } = renderIOMessageWithIntl({ id, messages })
+
+    const element = getByText(messages[id])
 
     expect(element).toBeDefined()
   })
@@ -100,7 +87,11 @@ describe('IOMessage', () => {
       verb: 'works',
     }
 
-    const element = getElement({ id, messages, values })
+    const text = parseDynamicMessage({ message: messages[id], values })
+
+    const { getByText } = renderIOMessageWithIntl({ id, messages, values })
+
+    const element = getByText(text)
 
     expect(element).toBeDefined()
   })
