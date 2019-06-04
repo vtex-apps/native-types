@@ -11,14 +11,15 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "target": "es2017",
-    "typeRoots": ["node_modules/@types"],
-    "types": ["jest", "graphql", "node"]
+    "typeRoots": ["node_modules", "node_modules/@types"],
+    "types": ["graphql", "node"]
   },
   "exclude": ["node_modules"],
   "include": ["./typings/*.d.ts", "./**/*.tsx", "./**/*.ts"],

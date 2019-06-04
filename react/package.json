@@ -1,10 +1,15 @@
 {
+  "scripts": {
+    "test": "vtex-test-tools test"
+  },
   "devDependencies": {
     "@types/graphql": "^14.2.0",
-    "@types/jest": "^24.0.12",
-    "@types/node": "^11.13.8",
-    "@types/react": "^16.8.14",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.8.16",
     "@types/react-intl": "^2.3.17",
+    "@vtex/test-tools": "^0.3.2",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
     "eslint": "^5.16.0",
     "eslint-config-vtex-react": "^4.0.0",
     "prettier": "^1.17.0",

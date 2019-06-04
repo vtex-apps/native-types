@@ -1,9 +1,9 @@
 import React from 'react'
-import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
-type Props = FormattedMessage.Props & InjectedIntlProps
+import { IOMessage as IOMessageType } from './typings/IOMessage'
 
-const IOMessage: React.FunctionComponent<Props> = props => {
+const IOMessage: IOMessageType = props => {
   const intlMessage = props.intl.messages[props.id]
 
   if (intlMessage) {

@@ -1,10 +1,4 @@
-import { FormattedMessage, InjectedIntlProps, MessageValue } from 'react-intl'
-
-type FormatIOMessage = (
-  adaptedMessageDescriptor: FormattedMessage.MessageDescriptor &
-    InjectedIntlProps,
-  values?: Record<string, MessageValue>
-) => string
+import { FormatIOMessage } from './typings/formatIOMessage'
 
 const formatIOMessage: FormatIOMessage = (
   { intl, ...messageDescriptor },
