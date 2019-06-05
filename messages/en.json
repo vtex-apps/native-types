@@ -23,5 +23,5 @@
   "admin/native-types.video.url": "URL",
   "store/native-types.text": "Your text here",
   "store/native-types.richText": "Lorem ipsum...",
-  "store/native-types.url": "http://example.com"
+  "store/native-types.url": "https://example.com"
 }
