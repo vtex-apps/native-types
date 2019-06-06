@@ -99,6 +99,7 @@
           "$ref": "#/definitions/text"
         }
       ],
+      "format": "RichText",
       "title": "admin/native-types.richText",
       "examples": ["store/native-types.richText"]
     },
