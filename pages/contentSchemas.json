@@ -101,6 +101,7 @@
       ],
       "format": "RichText",
       "title": "admin/native-types.richText",
+      "type": "string",
       "examples": ["store/native-types.richText"]
     },
 

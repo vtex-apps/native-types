@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `RichText` format.
+- Format to `richText`.
+- Type to `richText`.
 
 ## [0.2.2] - 2019-06-05
 
