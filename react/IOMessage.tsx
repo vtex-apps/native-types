@@ -7,7 +7,11 @@ const IOMessage: IOMessageType = ({ children, id, ...props }) => {
   const intlMessage = props.intl.messages[id]
 
   if (intlMessage) {
-    return <FormattedMessage id={id} {...props} />
+    return (
+      <FormattedMessage id={id} {...props}>
+        {children}
+      </FormattedMessage>
+    )
   }
 
   if (children && typeof children === 'function') {
