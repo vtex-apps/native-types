@@ -15,7 +15,7 @@ const IOMessage: IOMessageType = ({ children, id, ...props }) => {
   }
 
   if (children && typeof children === 'function') {
-    return children(intlMessage || id) as ReactElement || null
+    return children(typeof intlMessage === 'string' ? intlMessage : id) as ReactElement || null
   }
 
   return intlMessage === '' ? null : <>{id}</>
