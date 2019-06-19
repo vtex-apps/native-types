@@ -15,10 +15,10 @@ const IOMessage: IOMessageType = ({ children, id, ...props }) => {
   }
 
   if (children && typeof children === 'function') {
-    return children(intlMessage == null ? id : intlMessage) as ReactElement || null
+    return children(intlMessage === '' ? '' : id) as ReactElement || null
   }
 
-  return intlMessage == null ? <>{id}</> : null
+  return intlMessage === '' ? null : <>{id}</>
 }
 
 export default injectIntl(IOMessage)
