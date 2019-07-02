@@ -27,19 +27,11 @@
     "image": {
       "properties": {
         "description": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/text"
-            }
-          ],
+          "$ref": "#/definitions/text",
           "title": "admin/native-types.image.description"
         },
         "desktop": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/url"
-            }
-          ],
+          "$ref": "#/definitions/url",
           "format": "Image",
           "title": "admin/native-types.image.desktop"
         },
@@ -48,11 +40,7 @@
           "type": "string"
         },
         "mobile": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/url"
-            }
-          ],
+          "$ref": "#/definitions/url",
           "format": "Image",
           "title": "admin/native-types.image.mobile"
         }
@@ -69,11 +57,7 @@
           "type": "boolean"
         },
         "attributeTitle": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/text"
-            }
-          ],
+          "$ref": "#/definitions/text",  
           "title": "admin/native-types.link.attributeTitle"
         },
         "newTab": {
@@ -81,11 +65,7 @@
           "type": "boolean"
         },
         "url": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/url"
-            }
-          ],
+          "$ref": "#/definitions/url",
           "title": "admin/native-types.link.url"
         }
       },
@@ -94,11 +74,7 @@
     },
 
     "richText": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/text"
-        }
-      ],
+      "$ref": "#/definitions/text",
       "format": "RichText",
       "title": "admin/native-types.richText",
       "type": "string",
@@ -113,11 +89,7 @@
     },
 
     "url": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/text"
-        }
-      ],
+      "$ref": "#/definitions/text",  
       "title": "admin/native-types.url",
       "type": "string",
       "examples": ["store/native-types.url"]
@@ -126,35 +98,19 @@
     "video": {
       "properties": {
         "description": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/text"
-            }
-          ],
+          "$ref": "#/definitions/text",
           "title": "admin/native-types.video.description"
         },
         "thumbnail": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/image"
-            }
-          ],
+          "$ref": "#/definitions/image",
           "title": "admin/native-types.video.thumbnail"
         },
         "title": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/text"
-            }
-          ],
+          "$ref": "#/definitions/text" ,
           "title": "admin/native-types.video.title"
         },
         "url": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/url"
-            }
-          ],
+          "$ref": "#/definitions/url",
           "title": "admin/native-types.video.url"
         }
       },
