@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4] - 2019-08-08
+
 ### Security
 
 - Upgrade packages due to a security vulnerability in Lodash.
