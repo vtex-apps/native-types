@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+
+- Upgrade packages due to a security vulnerability in Lodash.
+
 ## [0.4.3] - 2019-07-02
 ### Changed
 - Remove unnecessary allOf refs from `contentSchemas`
