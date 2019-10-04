@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+
+- Upgrade packages due to a security vulnerability in eslint-utils.
+
 ## [0.5.1] - 2019-09-11
 
 ### Security
@@ -22,19 +26,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade packages due to a security vulnerability in Lodash.
 
 ## [0.4.3] - 2019-07-02
+
 ### Changed
+
 - Remove unnecessary allOf refs from `contentSchemas`
 
 ## [0.4.2] - 2019-07-01
+
 ### Changed
+
 - Internal intlMessage type verification on IOMessage.
 
 ## [0.4.1] - 2019-06-27
+
 ### Fixed
+
 - Build assets with new builder hub.
 
 ## [0.4.0] - 2019-06-19
+
 ### Added
+
 - Add support for child-as-function pattern on IOMessage.
 
 ## [0.3.0] - 2019-06-06
