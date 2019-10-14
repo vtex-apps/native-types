@@ -19,7 +19,7 @@
     "strictPropertyInitialization": true,
     "target": "es2017",
     "typeRoots": ["node_modules", "node_modules/@types"],
-    "types": ["graphql", "node"]
+    "types": ["node"]
   },
   "exclude": ["node_modules"],
   "include": ["./typings/*.d.ts", "./**/*.tsx", "./**/*.ts"],

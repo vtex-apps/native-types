@@ -3,7 +3,6 @@
     "test": "vtex-test-tools test"
   },
   "devDependencies": {
-    "@types/graphql": "^14.2.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.8.16",
     "@types/react-intl": "^2.3.17",
