@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- GraphQL types.
+
 ## [0.5.2] - 2019-10-04
 
 ### Security
