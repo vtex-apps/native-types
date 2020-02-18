@@ -4,19 +4,15 @@ const formatIOMessage: FormatIOMessage = (
   { intl, ...messageDescriptor },
   values
 ) => {
-  const { id } = messageDescriptor
+  const { id, defaultMessage } = messageDescriptor
 
   const intlMessage = intl.messages[id]
 
-  if (intlMessage) {
-    return intl.formatMessage(messageDescriptor, values)
+  if (!intlMessage && !defaultMessage) {
+    return id
   }
 
-  if (intlMessage === '') {
-    return ''
-  }
-
-  return id
+  return intl.formatMessage(messageDescriptor, values)
 }
 
 export default formatIOMessage
