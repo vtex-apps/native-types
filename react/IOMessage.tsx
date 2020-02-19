@@ -9,6 +9,8 @@ import {
 
 import { IOMessage as IOMessageType } from './typings/IOMessage'
 
+const cache = createIntlCache()
+
 const IOMessage: IOMessageType = ({
   children,
   id,
@@ -16,6 +18,11 @@ const IOMessage: IOMessageType = ({
   ...props
 }) => {
   const intl = useIntl()
+
+  if (!id || id.length === 0) {
+    return id
+  }
+
   const intlMessage = intl.messages[id]
 
   if (intlMessage) {
@@ -31,7 +38,6 @@ const IOMessage: IOMessageType = ({
    * in the current IntlContext to the function and actually have it
    * formatted by react-intl.
    */
-  const cache = createIntlCache()
   const newIntl = createIntl(
     {
       locale: intl.locale,
@@ -47,7 +53,11 @@ const IOMessage: IOMessageType = ({
       (children(
         intlMessage === ''
           ? ''
-          : newIntl.formatMessage({ id, defaultMessage }, props.values)
+          : id &&
+              newIntl.formatMessage(
+                { id: String(id), defaultMessage },
+                props.values
+              )
       ) as ReactElement) || null
     )
   }
