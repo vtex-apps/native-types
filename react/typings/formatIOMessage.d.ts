@@ -1,9 +1,12 @@
-import { FormattedMessage, InjectedIntl, InjectedIntlProps } from 'react-intl'
+import { IntlShape, MessageDescriptor } from 'react-intl'
 
-type AdaptedMessageDescriptor = FormattedMessage.MessageDescriptor &
-  InjectedIntlProps
+type AdaptedMessageDescriptor = MessageDescriptor & {
+  intl: IntlShape
+}
+
+export type Values = Record<string, string>
 
 export type FormatIOMessage = (
   adaptedMessageDescriptor: AdaptedMessageDescriptor,
-  values?: Record<string, string>
+  values?: Values
 ) => string

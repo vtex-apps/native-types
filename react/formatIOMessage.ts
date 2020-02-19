@@ -8,7 +8,12 @@ const formatIOMessage: FormatIOMessage = (
   { intl, ...messageDescriptor },
   values
 ) => {
-  const { id, defaultMessage } = messageDescriptor
+  const { defaultMessage, id } = messageDescriptor
+
+  if (typeof id !== 'string') {
+    return ''
+  }
+
   const intlMessage = intl.messages[id]
 
   if (intlMessage) {
@@ -34,7 +39,7 @@ const formatIOMessage: FormatIOMessage = (
     cache
   )
 
-  return id && newIntl.formatMessage({ id, defaultMessage }, values)
+  return id && newIntl.formatMessage({ defaultMessage, id }, values)
 }
 
 export default formatIOMessage
