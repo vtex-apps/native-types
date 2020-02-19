@@ -2,6 +2,8 @@ import { createIntl, createIntlCache } from 'react-intl'
 
 import { FormatIOMessage } from './typings/formatIOMessage'
 
+const cache = createIntlCache()
+
 const formatIOMessage: FormatIOMessage = (
   { intl, ...messageDescriptor },
   values
@@ -22,7 +24,6 @@ const formatIOMessage: FormatIOMessage = (
    * in the current IntlContext to the function and actually have it
    * formatted by react-intl.
    */
-  const cache = createIntlCache()
   const newIntl = createIntl(
     {
       locale: intl.locale,
