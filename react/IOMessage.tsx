@@ -12,7 +12,7 @@ const IOMessage: IOMessageType = ({
 }) => {
   const intl = useIntl()
 
-  if (!id || id.length === 0) {
+  if (id == null) {
     return id
   }
 
