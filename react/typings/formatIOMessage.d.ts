@@ -5,5 +5,5 @@ type AdaptedMessageDescriptor = FormattedMessage.MessageDescriptor &
 
 export type FormatIOMessage = (
   adaptedMessageDescriptor: AdaptedMessageDescriptor,
-  values?: Parameters<InjectedIntl['formatMessage']>[1]
+  values?: Record<string, string>
 ) => string
