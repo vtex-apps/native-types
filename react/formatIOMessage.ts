@@ -39,7 +39,7 @@ const formatIOMessage: FormatIOMessage = (
     cache
   )
 
-  return id && newIntl.formatMessage({ defaultMessage, id }, values)
+  return newIntl.formatMessage({ defaultMessage, id }, values)
 }
 
 export default formatIOMessage

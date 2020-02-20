@@ -17,12 +17,7 @@ const IOMessage: IOMessageType = ({
     return children(message === '' ? '' : message) || null
   }
 
-  return message === '' ? null : (
-    <Fragment>
-      {message}
-      {children}
-    </Fragment>
-  )
+  return message === '' ? null : <Fragment>{message}</Fragment>
 }
 
 export default IOMessage
