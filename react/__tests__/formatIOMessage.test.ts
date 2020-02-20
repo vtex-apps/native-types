@@ -80,4 +80,14 @@ describe('formatIOMessage', () => {
 
     expect(output).toBe(expectedOutput)
   })
+
+  it("returns '' when id is ''", () => {
+    const id = ''
+
+    const intl = createMockIntl()
+
+    const output = formatIOMessage({ id, intl })
+
+    expect(output).toBe('')
+  })
 })
