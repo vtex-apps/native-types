@@ -1,10 +1,18 @@
+import { createIntl, createIntlCache } from 'react-intl'
+
 import { FormatIOMessage } from './typings/formatIOMessage'
+
+const cache = createIntlCache()
 
 const formatIOMessage: FormatIOMessage = (
   { intl, ...messageDescriptor },
   values
 ) => {
-  const { id } = messageDescriptor
+  const { defaultMessage, id } = messageDescriptor
+
+  if (typeof id !== 'string' || id === '') {
+    return ''
+  }
 
   const intlMessage = intl.messages[id]
 
@@ -16,7 +24,22 @@ const formatIOMessage: FormatIOMessage = (
     return ''
   }
 
-  return id
+  /**
+   * This enables a user to pass a translatable message which is not
+   * in the current IntlContext to the function and actually have it
+   * formatted by react-intl.
+   */
+  const newIntl = createIntl(
+    {
+      locale: intl.locale,
+      messages: {
+        [id]: id,
+      },
+    },
+    cache
+  )
+
+  return newIntl.formatMessage({ defaultMessage, id }, values)
 }
 
 export default formatIOMessage

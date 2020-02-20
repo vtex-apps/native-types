@@ -1,6 +1,10 @@
 import { FunctionComponent } from 'react'
-import { FormattedMessage, InjectedIntlProps } from 'react-intl'
+import { MessageDescriptor } from 'react-intl'
+
+import { Values } from './formatIOMessage'
 
 export type IOMessage = FunctionComponent<
-  FormattedMessage.Props & InjectedIntlProps
+  MessageDescriptor & {
+    values?: Values
+  }
 >

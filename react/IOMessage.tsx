@@ -1,24 +1,23 @@
-import React, { ReactElement } from 'react'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import React, { Fragment } from 'react'
+import { useIntl } from 'react-intl'
 
+import formatIOMessage from './formatIOMessage'
 import { IOMessage as IOMessageType } from './typings/IOMessage'
 
-const IOMessage: IOMessageType = ({ children, id, ...props }) => {
-  const intlMessage = props.intl.messages[id]
+const IOMessage: IOMessageType = ({
+  children,
+  values,
+  ...messageDescriptor
+}) => {
+  const intl = useIntl()
 
-  if (intlMessage) {
-    return (
-      <FormattedMessage id={id} {...props}>
-        {children}
-      </FormattedMessage>
-    )
-  }
+  const message = formatIOMessage({ intl, ...messageDescriptor }, values)
 
   if (children && typeof children === 'function') {
-    return children(intlMessage === '' ? '' : id) as ReactElement || null
+    return children(message === '' ? '' : message) || null
   }
 
-  return intlMessage === '' ? null : <>{id}</>
+  return message === '' ? null : <Fragment>{message}</Fragment>
 }
 
-export default injectIntl(IOMessage)
+export default IOMessage
