@@ -4,7 +4,7 @@ type AdaptedMessageDescriptor = MessageDescriptor & {
   intl: IntlShape
 }
 
-export type Values = Record<string, string>
+export type Values = Record<string, string | number>
 
 export type FormatIOMessage = (
   adaptedMessageDescriptor: AdaptedMessageDescriptor,
