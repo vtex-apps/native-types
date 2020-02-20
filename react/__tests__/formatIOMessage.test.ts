@@ -1,31 +1,30 @@
-import { InjectedIntl, IntlProvider } from 'react-intl'
+import { IntlShape, createIntl } from 'react-intl'
 
 import formatIOMessage from '../formatIOMessage'
-import { FormatIOMessage } from '../typings/formatIOMessage'
 
-interface GetOutputParams {
-  id: Parameters<FormatIOMessage>[0]['id']
-  messages: Parameters<FormatIOMessage>[0]['intl']['messages']
-  values?: Parameters<FormatIOMessage>[1]
-}
-
-const getOutput = ({ id, messages, values }: GetOutputParams) => {
-  const intlProvider = new IntlProvider({ locale: 'en', messages })
-
-  const { intl } = intlProvider.getChildContext()
-
-  return formatIOMessage({ id, intl }, values)
-}
+const createMockIntl = (customMessages: IntlShape['messages'] = {}) =>
+  createIntl({ locale: 'en', messages: customMessages })
 
 describe('formatIOMessage', () => {
   it('returns id when message is undefined', () => {
     const id = 'test/format-io-message.unmapped-id-example'
+    const intl = createMockIntl()
 
-    const messages: InjectedIntl['messages'] = {}
+    const output = formatIOMessage({ id, intl })
 
-    const output = getOutput({ id, messages })
+    expect(output).toBe(id)
+  })
 
-    const expectedOutput = id
+  it('returns formatted id when message is undefined and dynamic', () => {
+    const id = '{exceedingItems, plural, =0{} one {+ # gift} other {+ # gifts}}'
+    const intl = createMockIntl()
+
+    const values = {
+      exceedingItems: '3',
+    }
+
+    const output = formatIOMessage({ id, intl }, values)
+    const expectedOutput = '+ 3 gifts'
 
     expect(output).toBe(expectedOutput)
   })
@@ -33,9 +32,10 @@ describe('formatIOMessage', () => {
   it("returns '' when message is ''", () => {
     const id = 'test/format-io-message.empty-string-example'
 
-    const messages: InjectedIntl['messages'] = { [id]: '' }
+    const messages: IntlShape['messages'] = { [id]: '' }
+    const intl = createMockIntl(messages)
 
-    const output = getOutput({ id, messages })
+    const output = formatIOMessage({ id, intl })
 
     const expectedOutput = ''
 
@@ -45,11 +45,12 @@ describe('formatIOMessage', () => {
   it('works with static, non-empty messages', () => {
     const id = 'test/format-io-message.working-static-example'
 
-    const messages: InjectedIntl['messages'] = {
+    const messages: IntlShape['messages'] = {
       [id]: 'It works :)',
     }
+    const intl = createMockIntl(messages)
 
-    const output = getOutput({ id, messages })
+    const output = formatIOMessage({ id, intl })
 
     const expectedOutput = messages[id]
 
@@ -59,7 +60,7 @@ describe('formatIOMessage', () => {
   it('works with dynamic, non-empty messages', () => {
     const id = 'test/format-io-message.working-dynamic-example'
 
-    const messages: InjectedIntl['messages'] = {
+    const messages: IntlShape['messages'] = {
       [id]: '{subject} {verb} {emoji}',
     }
 
@@ -69,7 +70,8 @@ describe('formatIOMessage', () => {
       verb: 'works',
     }
 
-    const output = getOutput({ id, messages, values })
+    const intl = createMockIntl(messages)
+    const output = formatIOMessage({ id, intl }, values)
 
     const expectedOutput = Object.entries(values).reduce(
       (acc, [currKey, currValue]) => acc.replace(`{${currKey}}`, currValue),
