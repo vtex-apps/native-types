@@ -10,7 +10,7 @@ const formatIOMessage: FormatIOMessage = (
 ) => {
   const { defaultMessage, id } = messageDescriptor
 
-  if (typeof id !== 'string') {
+  if (typeof id !== 'string' || id === '') {
     return ''
   }
 
