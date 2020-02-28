@@ -3,8 +3,8 @@ import { FunctionComponent } from 'react'
 type Values = Record<string, any>
 
 interface Props {
-  label: string
-  componentName: string
+  message: string
+  handleBase: string
   markers: string[]
   values: Values
 }

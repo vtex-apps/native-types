@@ -5,61 +5,61 @@ import IOMessageWithMarkers from '../IOMessageWithMarkers'
 import { IOMessageWithMarkers as IOMessageWithMarkersType } from '../typings/IOMessageWithMarkers'
 
 interface RenderElementParams {
-  label: React.ComponentProps<IOMessageWithMarkersType>['label']
+  message: React.ComponentProps<IOMessageWithMarkersType>['message']
   values?: React.ComponentProps<IOMessageWithMarkersType>['values']
-  componentName?: React.ComponentProps<IOMessageWithMarkersType>['componentName']
+  handleBase?: React.ComponentProps<IOMessageWithMarkersType>['handleBase']
   markers?: React.ComponentProps<IOMessageWithMarkersType>['markers']
 }
 
-const renderIOMessageWithIntl = ({ label, values = {}, componentName = '', markers = [] }: RenderElementParams) =>
-  render(<IOMessageWithMarkers label={label} values={values} componentName={componentName} markers={markers} />, {
+const renderIOMessageWithIntl = ({ message, values = {}, handleBase = '', markers = [] }: RenderElementParams) =>
+  render(<IOMessageWithMarkers message={message} values={values} handleBase={handleBase} markers={markers} />, {
     locale: 'en',
   })
 
 describe('IOMessageWithMarkers', () => {
   it('Render simple message with only the label', () => {
-    const label = 'Hello world!'
-    const { getByText } = renderIOMessageWithIntl({ label })
-    const element = getByText(label)
+    const message = 'Hello world!'
+    const { getByText } = renderIOMessageWithIntl({ message })
+    const element = getByText(message)
 
     expect(element).toBeDefined()
   })
 
   it('Check values interpolation', () => {
-    const label = '{hello} {world} {exclamation}'
+    const message = '{hello} {world} {exclamation}'
     const values = {
       hello: 'Hello',
       world: 'World',
       exclamation: '!'
     }
 
-    const { getByText } = renderIOMessageWithIntl({ label, values })
+    const { getByText } = renderIOMessageWithIntl({ message, values })
     const element = getByText('Hello World !')
 
     expect(element).toBeDefined()
   })
 
   it('check marker and componentName', () => {
-    const label = '<bold>Hello World!</bold>'
+    const message = '<bold>Hello World!</bold>'
     const markers = ['bold']
-    const componentName = 'test'
-    const { getByText } = renderIOMessageWithIntl({ label, markers, componentName })
+    const handleBase = 'test'
+    const { getByText } = renderIOMessageWithIntl({ message, markers, handleBase })
     const element = getByText('Hello World!')
 
     expect(element.className).toBe('test_bold')
   })
 
   it('check message with many markers and values', () => {
-    const label = '<bold>{a}</bold> <italic>{b}</italic> <pretty>{c}</pretty> <sale>{d}</sale>'
+    const message = '<bold>{a}</bold> <italic>{b}</italic> <pretty>{c}</pretty> <sale>{d}</sale>'
     const values = {
       a: 'A',
       b: 'B',
       c: 'C',
       d: 'D'
     }
-    const componentName = 'test'
+    const handleBase = 'test'
     const markers = ['bold', 'italic', 'pretty', 'sale']
-    const { getByText } = renderIOMessageWithIntl({ label, values, markers, componentName })
+    const { getByText } = renderIOMessageWithIntl({ message, values, markers, handleBase })
 
     expect(getByText('A').className).toBe('test_bold')
     expect(getByText('B').className).toBe('test_italic')
@@ -68,16 +68,16 @@ describe('IOMessageWithMarkers', () => {
   })
 
   it('check that if there are values equal to markers, the component should not be rendered correctly', () => {
-    const label = '<a>{a}</a> <b>{b}</b> <c>{c}</c> <d>{d}</d>'
+    const message = '<a>{a}</a> <b>{b}</b> <c>{c}</c> <d>{d}</d>'
     const values = {
       a: 'A',
       b: 'B',
       c: 'C',
       d: 'D'
     }
-    const componentName = 'test'
+    const handleBase = 'test'
     const markers = ['a', 'b', 'c', 'd']
-    const { queryByText } = renderIOMessageWithIntl({ label, values, markers, componentName })
+    const { queryByText } = renderIOMessageWithIntl({ message, values, markers, handleBase })
 
     expect(queryByText('A')).toBeNull()
     expect(queryByText('B')).toBeNull()

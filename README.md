@@ -1,3 +1,0 @@
-# Native types
-
-Coming soon :)
