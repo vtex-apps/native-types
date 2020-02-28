@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import React, { useMemo } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
