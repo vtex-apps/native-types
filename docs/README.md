@@ -48,7 +48,7 @@ This component is used to render messages with interpolations and custom tags (m
 ```
 
 
-**🔴 WARNING:** The `markers` and `values` props of this component are both passed to `IOMessage` through `values` so it is important to notive that you **should not** use the same labels within these props.
+**🔴 WARNING:** The `markers` and `values` props of this component are both passed to `IOMessage` through `values` so it is important to notice that you **should not** use the same labels within these props.
 
 ### formatIOMessage
 
