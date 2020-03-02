@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
 import IOMessage from './IOMessage'
-import { IOMessageWithMarkers as IOMessageWithMarkersType } from './typings/IOMessageWithMarkers'
+import { IOMessageWithMarkers as IOMessageWithMarkersType } from './types/IOMessageWithMarkers'
 
 const IOMessageWithMarkers: IOMessageWithMarkersType = ({
   message,

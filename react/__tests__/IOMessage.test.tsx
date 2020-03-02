@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@vtex/test-tools/react'
 
 import IOMessage from '../IOMessage'
-import { IOMessage as IOMessageType } from '../typings/IOMessage'
+import { IOMessage as IOMessageType } from '../types/IOMessage'
 
 interface RenderElementParams {
   id: React.ComponentProps<IOMessageType>['id']

@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@vtex/test-tools/react'
 
 import IOMessageWithMarkers from '../IOMessageWithMarkers'
-import { IOMessageWithMarkers as IOMessageWithMarkersType } from '../typings/IOMessageWithMarkers'
+import { IOMessageWithMarkers as IOMessageWithMarkersType } from '../types/IOMessageWithMarkers'
 
 interface RenderElementParams {
   message: React.ComponentProps<IOMessageWithMarkersType>['message']
