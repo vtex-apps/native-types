@@ -46,7 +46,7 @@ describe('IOMessageWithMarkers', () => {
     const { getByText } = renderIOMessageWithIntl({ message, markers, handleBase })
     const element = getByText('Hello World!')
 
-    expect(element.className).toBe('test_bold')
+    expect(element.className).toBe('test-bold')
   })
 
   it('check message with many markers and values', () => {
@@ -61,10 +61,10 @@ describe('IOMessageWithMarkers', () => {
     const markers = ['bold', 'italic', 'pretty', 'sale']
     const { getByText } = renderIOMessageWithIntl({ message, values, markers, handleBase })
 
-    expect(getByText('A').className).toBe('test_bold')
-    expect(getByText('B').className).toBe('test_italic')
-    expect(getByText('C').className).toBe('test_pretty')
-    expect(getByText('D').className).toBe('test_sale')
+    expect(getByText('A').className).toBe('test-bold')
+    expect(getByText('B').className).toBe('test-italic')
+    expect(getByText('C').className).toBe('test-pretty')
+    expect(getByText('D').className).toBe('test-sale')
   })
 
   it('check that if there are values equal to markers, the component should not be rendered correctly', () => {
