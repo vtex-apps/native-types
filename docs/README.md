@@ -20,7 +20,7 @@ Coming soon :)
 
 ### IOMessageWithMarkers
 
-This component is used to render messages with interpolations and custom tags (markers). These markers are useful to wrap a aprt of the message with CSS handles.
+This component is used to render messages with interpolations and custom tags (markers). These markers are useful to wrap a part of the message with CSS handles.
 
 | Prop name | Type | Description | Default Value |
 | --- | --- | --- | --- |
@@ -30,13 +30,17 @@ This component is used to render messages with interpolations and custom tags (m
 | `values` | `Record<string, any>` | Values used in the message interpolation | `{}` |
 
 **Example:**
- - message: '<bold>Hello,</bold> {name}!'
- - markers: ['bold']
- - handleBase: 'Greetings'
- - values: { name: 'John Doe' }
+``` js
+{
+  message: '<bold>Hello,</bold> {name}!'
+  markers: ['bold']
+  handleBase: 'Greetings'
+  values: { name: 'John Doe' }
+}
+```
  
  The following will be rendered:
-```
+``` js
   <div>
     <span
       class="Greetings_bold"
