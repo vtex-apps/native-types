@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { useIntl } from 'react-intl'
 
 import formatIOMessage from './formatIOMessage'
-import { IOMessage as IOMessageType } from './typings/IOMessage'
+import { IOMessage as IOMessageType } from './types/IOMessage'
 
 const IOMessage: IOMessageType = ({
   children,

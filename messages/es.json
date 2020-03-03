@@ -23,5 +23,8 @@
   "admin/native-types.video.url": "URL",
   "store/native-types.text": "Tu texto aquí",
   "store/native-types.richText": "Lorem ipsum...",
-  "store/native-types.url": "https://example.com"
+  "store/native-types.url": "https://example.com",
+  "test/format-io-message.empty-string-example": "",
+  "test/format-io-message.working-static-example": "It works :)",
+  "test/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
 }

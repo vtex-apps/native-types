@@ -1,6 +1,6 @@
 import { createIntl, createIntlCache } from 'react-intl'
 
-import { FormatIOMessage } from './typings/formatIOMessage'
+import { FormatIOMessage } from './types/formatIOMessage'
 
 const cache = createIntlCache()
 
