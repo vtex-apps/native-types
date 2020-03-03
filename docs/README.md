@@ -30,7 +30,7 @@ This component is used to render messages with interpolations and custom tags (m
 | `values` | `Record<string, any>` | Values used in the message interpolation | `{}` |
 
 **Example:**
-``` js
+```jsx
 <IOMessageWithMarkers
   message="<bold>Hello,</bold> {name}!"
   markers={['bold']}
