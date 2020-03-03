@@ -31,12 +31,12 @@ This component is used to render messages with interpolations and custom tags (m
 
 **Example:**
 ``` js
-{
-  message: '<bold>Hello,</bold> {name}!'
-  markers: ['bold']
-  handleBase: 'Greetings'
-  values: { name: 'John Doe' }
-}
+<IOMessageWithMarkers
+  message="<bold>Hello,</bold> {name}!"
+  markers={['bold']}
+  handleBase="Greetings"
+  values={{ name: 'John Doe' }}
+/>
 ```
  
  The following will be rendered:
