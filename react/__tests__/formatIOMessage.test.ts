@@ -48,6 +48,7 @@ describe('formatIOMessage', () => {
     const messages: IntlShape['messages'] = {
       [id]: 'It works :)',
     }
+
     const intl = createMockIntl(messages)
 
     const output = formatIOMessage({ id, intl })
