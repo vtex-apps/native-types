@@ -11,10 +11,23 @@ interface RenderElementParams {
   markers?: React.ComponentProps<IOMessageWithMarkersType>['markers']
 }
 
-const renderIOMessageWithIntl = ({ message, values = {}, handleBase = '', markers = [] }: RenderElementParams) =>
-  render(<IOMessageWithMarkers message={message} values={values} handleBase={handleBase} markers={markers} />, {
-    locale: 'en',
-  })
+const renderIOMessageWithIntl = ({
+  message,
+  values = {},
+  handleBase = '',
+  markers = [],
+}: RenderElementParams) =>
+  render(
+    <IOMessageWithMarkers
+      message={message}
+      values={values}
+      handleBase={handleBase}
+      markers={markers}
+    />,
+    {
+      locale: 'en',
+    }
+  )
 
 describe('IOMessageWithMarkers', () => {
   it('Render simple message with only the label', () => {
@@ -30,7 +43,7 @@ describe('IOMessageWithMarkers', () => {
     const values = {
       hello: 'Hello',
       world: 'World',
-      exclamation: '!'
+      exclamation: '!',
     }
 
     const { getByText } = renderIOMessageWithIntl({ message, values })
@@ -43,23 +56,36 @@ describe('IOMessageWithMarkers', () => {
     const message = '<bold>Hello World!</bold>'
     const markers = ['bold']
     const handleBase = 'test'
-    const { getByText } = renderIOMessageWithIntl({ message, markers, handleBase })
+    const { getByText } = renderIOMessageWithIntl({
+      message,
+      markers,
+      handleBase,
+    })
+
     const element = getByText('Hello World!')
 
     expect(element.className).toBe('test-bold')
   })
 
   it('check message with many markers and values', () => {
-    const message = '<bold>{a}</bold> <italic>{b}</italic> <pretty>{c}</pretty> <sale>{d}</sale>'
+    const message =
+      '<bold>{a}</bold> <italic>{b}</italic> <pretty>{c}</pretty> <sale>{d}</sale>'
+
     const values = {
       a: 'A',
       b: 'B',
       c: 'C',
-      d: 'D'
+      d: 'D',
     }
+
     const handleBase = 'test'
     const markers = ['bold', 'italic', 'pretty', 'sale']
-    const { getByText } = renderIOMessageWithIntl({ message, values, markers, handleBase })
+    const { getByText } = renderIOMessageWithIntl({
+      message,
+      values,
+      markers,
+      handleBase,
+    })
 
     expect(getByText('A').className).toBe('test-bold')
     expect(getByText('B').className).toBe('test-italic')
@@ -73,11 +99,17 @@ describe('IOMessageWithMarkers', () => {
       a: 'A',
       b: 'B',
       c: 'C',
-      d: 'D'
+      d: 'D',
     }
+
     const handleBase = 'test'
     const markers = ['a', 'b', 'c', 'd']
-    const { queryByText } = renderIOMessageWithIntl({ message, values, markers, handleBase })
+    const { queryByText } = renderIOMessageWithIntl({
+      message,
+      values,
+      markers,
+      handleBase,
+    })
 
     expect(queryByText('A')).toBeNull()
     expect(queryByText('B')).toBeNull()

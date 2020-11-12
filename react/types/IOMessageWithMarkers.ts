@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Values = Record<string, any>
 
 interface Props {
