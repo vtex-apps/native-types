@@ -20,7 +20,7 @@ const IOMessageWithMarkers: IOMessageWithMarkersType = ({
   const markerComponents = markers.reduce((acc, marker) => {
     // for more information check https://github.com/formatjs/react-intl/blob/master/docs/Components.md#rich-text-formatting
     // eslint-disable-next-line react/display-name
-    acc[marker] = (chunks) => (
+    acc[marker] = (...chunks) => (
       <span key={marker} className={handles[`${handleBase}-${marker}`]}>
         {chunks}
       </span>
