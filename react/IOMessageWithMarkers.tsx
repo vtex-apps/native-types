@@ -1,10 +1,19 @@
-import React, { useMemo, ReactElement } from 'react'
+import React, { useMemo, ReactElement, FC } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 
 import IOMessage from './IOMessage'
-import { IOMessageWithMarkers as IOMessageWithMarkersType } from './types/IOMessageWithMarkers'
 
-const IOMessageWithMarkers: IOMessageWithMarkersType = ({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Values = Record<string, any>
+
+interface Props {
+  message: string
+  handleBase: string
+  markers: string[]
+  values: Values
+}
+
+const IOMessageWithMarkers: FC<Props> = ({
   message,
   markers = [],
   handleBase = '',
