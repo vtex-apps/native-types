@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "native-types",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "builders": {
     "messages": "1.x",
     "pages": "1.x",
