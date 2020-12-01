@@ -1,12 +1,21 @@
-import { createIntl, createIntlCache } from 'react-intl'
+import {
+  createIntl,
+  createIntlCache,
+  MessageDescriptor,
+  IntlShape,
+} from 'react-intl'
 
-import { FormatIOMessage } from './types/formatIOMessage'
+type AdaptedMessageDescriptor = MessageDescriptor & {
+  intl: IntlShape
+}
+
+export type Values = Record<string, string | number>
 
 const cache = createIntlCache()
 
-const formatIOMessage: FormatIOMessage = (
-  { intl, ...messageDescriptor },
-  values
+const formatIOMessage = (
+  { intl, ...messageDescriptor }: AdaptedMessageDescriptor,
+  values?: Values
 ) => {
   const { defaultMessage, id } = messageDescriptor
 
