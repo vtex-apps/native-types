@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react'
 import {
   createIntl,
   createIntlCache,
@@ -9,7 +10,7 @@ type AdaptedMessageDescriptor = MessageDescriptor & {
   intl: IntlShape
 }
 
-export type Values = Record<string, string | number>
+export type Values = Record<string, string | number | ReactElement>
 
 const cache = createIntlCache()
 
