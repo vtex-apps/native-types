@@ -16,5 +16,5 @@
     "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.3/public/@types/vtex.render-runtime"
   },
-  "version": "0.7.4"
+  "version": "0.7.5"
 }
