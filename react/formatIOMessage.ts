@@ -4,6 +4,7 @@ import {
   createIntlCache,
   MessageDescriptor,
   IntlShape,
+  IntlFormatters,
 } from 'react-intl'
 
 type AdaptedMessageDescriptor = MessageDescriptor & {
@@ -14,10 +15,12 @@ export type Values = Record<string, string | number | ReactElement>
 
 const cache = createIntlCache()
 
-const formatIOMessage = (
+type Return<T extends Values | undefined> = T extends undefined ? string : ReturnType<IntlFormatters['formatMessage']>
+
+const formatIOMessage = <T extends Values | undefined = undefined>(
   { intl, ...messageDescriptor }: AdaptedMessageDescriptor,
-  values?: Values
-) => {
+  values?: T
+): Return<T> => {
   const { defaultMessage, id } = messageDescriptor
 
   if (typeof id !== 'string' || id === '') {
@@ -27,7 +30,7 @@ const formatIOMessage = (
   const intlMessage = intl.messages[id]
 
   if (intlMessage) {
-    return intl.formatMessage(messageDescriptor, values)
+    return intl.formatMessage(messageDescriptor, values) as Return<typeof values>
   }
 
   if (intlMessage === '') {
@@ -49,7 +52,7 @@ const formatIOMessage = (
     cache
   )
 
-  return newIntl.formatMessage({ defaultMessage, id }, values)
+  return newIntl.formatMessage({ defaultMessage, id }, values) as Return<typeof values>
 }
 
 export default formatIOMessage
