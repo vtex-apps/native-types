@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Arabic, Norwegian and Norwegian variant translation.
+
 ## [0.7.5] - 2020-12-18
 ### Fixed
 - Missing `ReactElement` possible value type for messages.
