@@ -10,7 +10,7 @@
   "admin/native-types.image.mobile": "มือถือ",
   "admin/native-types.link": "ลิงก์",
   "admin/native-types.link.attributeNofollow": "แอททริบิวต์ nofollow",
-  "admin/native-types.link.attributeTitle": "ชื่อหัวข้อแอททริบิวต์",
+  "admin/native-types.link.attributeTitle": "แอททริบิวต์ title",
   "admin/native-types.link.newTab": "แท็บใหม่",
   "admin/native-types.link.url": "URL",
   "admin/native-types.richText": "Rich Text",

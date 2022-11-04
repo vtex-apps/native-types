@@ -10,7 +10,7 @@
   "admin/native-types.image.mobile": "모바일",
   "admin/native-types.link": "링크",
   "admin/native-types.link.attributeNofollow": "속성 nofollow",
-  "admin/native-types.link.attributeTitle": "속성 제목",
+  "admin/native-types.link.attributeTitle": "속성 title",
   "admin/native-types.link.newTab": "새 탭",
   "admin/native-types.link.url": "URL",
   "admin/native-types.richText": "리치 텍스트",
