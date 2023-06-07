@@ -24,7 +24,7 @@
   "store/native-types.text": "Tukaj vnesite besedilo",
   "store/native-types.richText": "Loren ipsum...",
   "store/native-types.url": "https://example.com",
-  "test/format-io-message.empty-string-example": "",
-  "test/format-io-message.working-static-example": "Deluje :)\"",
-  "test/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
+  "admin/format-io-message.empty-string-example": "",
+  "admin/format-io-message.working-static-example": "Deluje :)\"",
+  "admin/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
 }

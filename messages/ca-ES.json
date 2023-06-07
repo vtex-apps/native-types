@@ -24,7 +24,7 @@
   "store/native-types.text": "El vostre text aquí",
   "store/native-types.richText": "Lorem ipsum...",
   "store/native-types.url": "https://example.com",
-  "test/format-io-message.empty-string-example": "",
-  "test/format-io-message.working-static-example": "Funciona :)",
-  "test/format-io-message.working-dynamic-example": "{subjecte} {verb} {emoji}"
+  "admin/format-io-message.empty-string-example": "",
+  "admin/format-io-message.working-static-example": "Funciona :)",
+  "admin/format-io-message.working-dynamic-example": "{subjecte} {verb} {emoji}"
 }

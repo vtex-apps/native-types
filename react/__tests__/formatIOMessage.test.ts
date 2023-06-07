@@ -7,7 +7,7 @@ const createMockIntl = (customMessages: IntlShape['messages'] = {}) =>
 
 describe('formatIOMessage', () => {
   it('returns id when message is undefined', () => {
-    const id = 'test/format-io-message.unmapped-id-example'
+    const id = 'admin/format-io-message.unmapped-id-example'
     const intl = createMockIntl()
 
     const output = formatIOMessage({ id, intl })
@@ -30,7 +30,7 @@ describe('formatIOMessage', () => {
   })
 
   it("returns '' when message is ''", () => {
-    const id = 'test/format-io-message.empty-string-example'
+    const id = 'admin/format-io-message.empty-string-example'
 
     const messages: IntlShape['messages'] = { [id]: '' }
     const intl = createMockIntl(messages)
@@ -43,7 +43,7 @@ describe('formatIOMessage', () => {
   })
 
   it('works with static, non-empty messages', () => {
-    const id = 'test/format-io-message.working-static-example'
+    const id = 'admin/format-io-message.working-static-example'
 
     const messages: IntlShape['messages'] = {
       [id]: 'It works :)',
@@ -59,7 +59,7 @@ describe('formatIOMessage', () => {
   })
 
   it('works with dynamic, non-empty messages', () => {
-    const id = 'test/format-io-message.working-dynamic-example'
+    const id = 'admin/format-io-message.working-dynamic-example'
 
     const messages: IntlShape['messages'] = {
       [id]: '{subject} {verb} {emoji}',

@@ -24,7 +24,7 @@
   "store/native-types.text": "テキストはこちらです",
   "store/native-types.richText": "ダミーテキスト…",
   "store/native-types.url": "https://example.com",
-  "test/format-io-message.empty-string-example": "",
-  "test/format-io-message.working-static-example": "有効です :)",
-  "test/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
+  "admin/format-io-message.empty-string-example": "",
+  "admin/format-io-message.working-static-example": "有効です :)",
+  "admin/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
 }

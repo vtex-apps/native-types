@@ -24,7 +24,7 @@
   "store/native-types.text": "Text field",
   "store/native-types.richText": "Rich text field",
   "store/native-types.url": "URL field",
-  "test/format-io-message.empty-string-example": "",
-  "test/format-io-message.working-static-example": "It works :)",
-  "test/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
+  "admin/format-io-message.empty-string-example": "",
+  "admin/format-io-message.working-static-example": "It works :)",
+  "admin/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
 }

@@ -24,7 +24,7 @@
   "store/native-types.text": "Вашият текст тук",
   "store/native-types.richText": "Lorem ipsum...",
   "store/native-types.url": "https://example.com",
-  "test/format-io-message.empty-string-example": "",
-  "test/format-io-message.working-static-example": "Работи :)",
-  "test/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
+  "admin/format-io-message.empty-string-example": "",
+  "admin/format-io-message.working-static-example": "Работи :)",
+  "admin/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
 }
