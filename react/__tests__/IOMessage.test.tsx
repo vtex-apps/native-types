@@ -58,7 +58,7 @@ describe('IOMessage', () => {
      * This message is defined at '/messages' so that @vtex/test-tools
      * can find it.
      * */
-    const id = 'test/format-io-message.empty-string-example'
+    const id = 'admin/format-io-message.empty-string-example'
 
     const { container } = renderIOMessageWithIntl({ id })
 
@@ -70,7 +70,7 @@ describe('IOMessage', () => {
      * This message is defined at '/messages' so that @vtex/test-tools
      * can find it.
      * */
-    const id = 'test/format-io-message.working-static-example'
+    const id = 'admin/format-io-message.working-static-example'
 
     const { getByText } = renderIOMessageWithIntl({ id })
 
@@ -84,7 +84,7 @@ describe('IOMessage', () => {
      * This message is defined at '/messages' so that @vtex/test-tools
      * can find it.
      * */
-    const id = 'test/format-io-message.working-dynamic-example'
+    const id = 'admin/format-io-message.working-dynamic-example'
 
     const values: Record<string, string> = {
       emoji: ':)',

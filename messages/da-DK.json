@@ -24,7 +24,7 @@
   "store/native-types.text": "Din tekst her",
   "store/native-types.richText": "Lorem ipsum...",
   "store/native-types.url": "https://eksempel.com",
-  "test/format-io-message.empty-string-example": "",
-  "test/format-io-message.working-static-example": "Det virker :)",
-  "test/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
+  "admin/format-io-message.empty-string-example": "",
+  "admin/format-io-message.working-static-example": "Det virker :)",
+  "admin/format-io-message.working-dynamic-example": "{subject} {verb} {emoji}"
 }
